@@ -1,27 +1,53 @@
 # ProductManagement
 
+This Angular application is a client-side interface for managing products, interacting with an ASP.NET Core Web API backend.
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.5.
 
-## Development server
+## Prerequisites
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- [Node.js and npm](https://nodejs.org/)
+- [Angular CLI](https://angular.io/cli)
 
-## Code scaffolding
+## Setup
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+1. **Clone the Repository:**
+   ```bash
+   git clone <repository-url>
+   cd <repository-directory>/AngularApp
+2. **Install Dependencies:**
+    ```bash
+    npm install
+3. **Configure the API Endpoint:**
+Ensure that the API URL in the "product.service.ts" file points to the correct backend URL. By default, it is set to:
+    ```bash
+    private apiUrl = 'https://localhost:{port}/api/products';
+## Application Structure
+- Components:
 
-## Build
+   - src/app/product-list: Displays a list of products.
+   - src/app/product-form: Handles adding and editing products.
+- Service:
+   - src/app/product.service.ts: Manages HTTP requests to the ASP.NET Core Web API.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Usage
+- Viewing Products
+   - Navigate to http://localhost:4200/products to view the list of products.
+- Adding a Product
+   1. Click on the Add Product button.
+   2. Fill out the form with the product details.
+   3. Click Add to add the product.
+- Editing a Product
+   1. Click on the Edit button next to the product you want to edit.
+   2. Update the product details in the form.
+   3. Click Update to save the changes.
+- Deleting a Product
+   1. Click on the Delete button next to the product you want to remove.
+   2. Confirm the deletion.
 
-## Running unit tests
+## Running the Application
+  **Start the Angular Development Server:**
+  ```bash
+  ng serve -o (or) npm start
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
