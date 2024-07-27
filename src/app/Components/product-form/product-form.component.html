@@ -1,0 +1,28 @@
+<button class="btn btn-outline-dark m-4" [routerLink]="['/products']"><i class="bi bi-caret-left-fill text-danger fs-5">Back To Products</i></button>
+<div class="container">
+    <h2 class="text-center my-4">{{ isEditMode ? 'Edit Product' : 'Add Product' }}
+      <i class="bi bi-pencil-square text-info mx-2"></i>
+      <i class="bi bi-rocket-takeoff-fill text-danger"></i>
+    </h2>
+    <form [formGroup]="productForm" (ngSubmit)="saveProduct()">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" id="name" class="form-control" 
+        name="name" formControlName="name" required>
+      </div>
+      <div class="form-group">
+        <label for="price">Price</label>
+        <input type="number" id="price" class="form-control"
+         name="price" formControlName="price" required>
+      </div>
+      <div class="form-group">
+        <label for="description">Description</label>
+        <input type="text" id="description" class="form-control"
+         name="description" formControlName="description">
+      </div>
+      <button type="submit" class="btn btn-success my-4">{{ isEditMode ? 'Edit' : 'Add' }}
+        <i class="bi bi-floppy-fill text-light mx-2"></i>
+      </button>
+    </form>
+  </div>
+  
